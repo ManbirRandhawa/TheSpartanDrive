@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2ECFA8CB53D838FA20089471 /* Pods_TheSpartanDrive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A81355C15A2661677A2BD99B /* Pods_TheSpartanDrive.framework */; };
 		4EB12FCC1CD86CD500F25D9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB12FCB1CD86CD500F25D9D /* AppDelegate.swift */; };
 		4EB12FCE1CD86CD500F25D9D /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB12FCD1CD86CD500F25D9D /* UserViewController.swift */; };
 		4EB12FD01CD86CD500F25D9D /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB12FCF1CD86CD500F25D9D /* BrowseViewController.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4030A63CEE7039A61286CECB /* Pods-TheSpartanDrive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheSpartanDrive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TheSpartanDrive/Pods-TheSpartanDrive.debug.xcconfig"; sourceTree = "<group>"; };
 		4EB12FC81CD86CD500F25D9D /* TheSpartanDrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheSpartanDrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EB12FCB1CD86CD500F25D9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EB12FCD1CD86CD500F25D9D /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,8 @@
 		4EB12FFA1CD8721600F25D9D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4EB12FFC1CD8723E00F25D9D /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		4EB12FFE1CD87BC300F25D9D /* UploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
+		A7598432D6FBA49EB6FD8843 /* Pods-TheSpartanDrive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheSpartanDrive.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheSpartanDrive/Pods-TheSpartanDrive.release.xcconfig"; sourceTree = "<group>"; };
+		A81355C15A2661677A2BD99B /* Pods_TheSpartanDrive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheSpartanDrive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,7 @@
 				4EB12FE51CD86E4E00F25D9D /* AudioToolbox.framework in Frameworks */,
 				4EB12FE21CD86E0100F25D9D /* Parse.framework in Frameworks */,
 				4EB12FE01CD86DF100F25D9D /* Bolts.framework in Frameworks */,
+				2ECFA8CB53D838FA20089471 /* Pods_TheSpartanDrive.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +102,8 @@
 				4EB12FE31CD86E1200F25D9D /* Framework */,
 				4EB12FCA1CD86CD500F25D9D /* TheSpartanDrive */,
 				4EB12FC91CD86CD500F25D9D /* Products */,
+				7A1AD7AC4D37AD9C40401307 /* Pods */,
+				8A08B1DA83B46D4E2F6A7DA3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,6 +142,23 @@
 			name = Framework;
 			sourceTree = "<group>";
 		};
+		7A1AD7AC4D37AD9C40401307 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4030A63CEE7039A61286CECB /* Pods-TheSpartanDrive.debug.xcconfig */,
+				A7598432D6FBA49EB6FD8843 /* Pods-TheSpartanDrive.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8A08B1DA83B46D4E2F6A7DA3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A81355C15A2661677A2BD99B /* Pods_TheSpartanDrive.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -142,9 +166,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4EB12FDC1CD86CD500F25D9D /* Build configuration list for PBXNativeTarget "TheSpartanDrive" */;
 			buildPhases = (
+				6341C80F18CF7A98EE7CC480 /* Check Pods Manifest.lock */,
 				4EB12FC41CD86CD500F25D9D /* Sources */,
 				4EB12FC51CD86CD500F25D9D /* Frameworks */,
 				4EB12FC61CD86CD500F25D9D /* Resources */,
+				E181A48A1EE7DAA3258A9971 /* Embed Pods Frameworks */,
+				A48BB81A2AA03CF0221F2855 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,6 +194,7 @@
 				TargetAttributes = {
 					4EB12FC71CD86CD500F25D9D = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 39Q6799377;
 					};
 				};
 			};
@@ -200,6 +228,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6341C80F18CF7A98EE7CC480 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A48BB81A2AA03CF0221F2855 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TheSpartanDrive/Pods-TheSpartanDrive-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E181A48A1EE7DAA3258A9971 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TheSpartanDrive/Pods-TheSpartanDrive-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4EB12FC41CD86CD500F25D9D /* Sources */ = {
@@ -325,8 +401,11 @@
 		};
 		4EB12FDD1CD86CD500F25D9D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4030A63CEE7039A61286CECB /* Pods-TheSpartanDrive.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TheSpartanDrive",
@@ -336,13 +415,17 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ttpm.TheSpartanDrive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
 		4EB12FDE1CD86CD500F25D9D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7598432D6FBA49EB6FD8843 /* Pods-TheSpartanDrive.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TheSpartanDrive",
@@ -352,6 +435,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ttpm.TheSpartanDrive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

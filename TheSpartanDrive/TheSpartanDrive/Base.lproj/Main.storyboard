@@ -46,7 +46,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1222" y="-844"/>
+            <point key="canvasLocation" x="750" y="-752"/>
         </scene>
         <!--Browse-->
         <scene sceneID="wg7-f3-ORb">
@@ -86,7 +86,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="288"/>
+            <point key="canvasLocation" x="750" y="56"/>
         </scene>
         <!--Upload-->
         <scene sceneID="D9j-vS-5n7">
@@ -107,23 +107,90 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MxZ-T7-TcU">
-                                <rect key="frame" x="265" y="278" width="71" height="30"/>
-                                <state key="normal" title="Select File"/>
+                                <rect key="frame" x="225" y="204" width="151" height="30"/>
+                                <color key="backgroundColor" red="0.34901960784313724" green="0.30588235294117649" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Select File">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectFile:" destination="d04-Q1-73v" eventType="touchUpInside" id="ilC-ii-QA0"/>
+                                </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wIC-DQ-3Pu">
+                                <rect key="frame" x="180" y="68" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.34901960784313724" green="0.30588235294117649" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="pbW-eZ-K5u"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7YB-kB-n86">
+                                <rect key="frame" x="225" y="513" width="151" height="30"/>
+                                <color key="backgroundColor" red="0.34901960784313724" green="0.30588235294117649" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="151" id="JVk-f2-K6I"/>
+                                </constraints>
+                                <state key="normal" title="Upload">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="UploadFile:" destination="d04-Q1-73v" eventType="touchUpInside" id="i1T-2m-j7e"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Image Name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cWb-fR-T5J">
+                                <rect key="frame" x="180" y="242" width="240" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qyD-4o-yxd">
+                                <rect key="frame" x="276" y="451" width="51" height="31"/>
+                                <color key="onTintColor" red="0.34901960784313724" green="0.30588235294117649" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="thumbTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </switch>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ztb-iY-Dgp">
+                                <rect key="frame" x="180" y="294" width="240" height="135"/>
+                                <color key="backgroundColor" red="0.34901960784313724" green="0.30588235294117649" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="135" id="5hw-lA-3kh"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="d04-Q1-73v" id="mBV-Nq-11I"/>
+                                    <outlet property="delegate" destination="d04-Q1-73v" id="31a-7s-WVj"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="AoC-Mj-H7z" firstAttribute="top" secondItem="MxZ-T7-TcU" secondAttribute="bottom" constant="243" id="5bA-tk-4f8"/>
                             <constraint firstItem="wHq-V8-otg" firstAttribute="centerX" secondItem="giU-2P-1ng" secondAttribute="centerX" id="AWB-zB-9DM"/>
+                            <constraint firstItem="AoC-Mj-H7z" firstAttribute="top" secondItem="7YB-kB-n86" secondAttribute="bottom" constant="8" symbolic="YES" id="BGG-qo-APM"/>
+                            <constraint firstItem="7YB-kB-n86" firstAttribute="top" secondItem="qyD-4o-yxd" secondAttribute="bottom" constant="31" id="FwH-TK-NLF"/>
+                            <constraint firstItem="cWb-fR-T5J" firstAttribute="top" secondItem="MxZ-T7-TcU" secondAttribute="bottom" constant="8" symbolic="YES" id="HPJ-83-ysT"/>
+                            <constraint firstItem="wIC-DQ-3Pu" firstAttribute="trailing" secondItem="cWb-fR-T5J" secondAttribute="trailing" id="IOJ-OP-fGv"/>
                             <constraint firstItem="wHq-V8-otg" firstAttribute="top" secondItem="kd3-gu-Ayp" secondAttribute="bottom" constant="19" id="Ivf-58-fM2"/>
-                            <constraint firstItem="wHq-V8-otg" firstAttribute="centerX" secondItem="MxZ-T7-TcU" secondAttribute="centerX" id="YJG-Sb-EQn"/>
+                            <constraint firstItem="qyD-4o-yxd" firstAttribute="top" secondItem="Ztb-iY-Dgp" secondAttribute="bottom" constant="22" id="KeB-MF-JK7"/>
+                            <constraint firstItem="MxZ-T7-TcU" firstAttribute="top" secondItem="wIC-DQ-3Pu" secondAttribute="bottom" constant="8" symbolic="YES" id="Oie-ev-KjR"/>
+                            <constraint firstItem="qyD-4o-yxd" firstAttribute="centerX" secondItem="Ztb-iY-Dgp" secondAttribute="centerX" id="Q8U-Xp-eIr"/>
+                            <constraint firstItem="MxZ-T7-TcU" firstAttribute="trailing" secondItem="7YB-kB-n86" secondAttribute="trailing" id="SQX-u2-afj"/>
+                            <constraint firstItem="qyD-4o-yxd" firstAttribute="centerX" secondItem="7YB-kB-n86" secondAttribute="centerX" id="UB9-qb-HhE"/>
+                            <constraint firstItem="MxZ-T7-TcU" firstAttribute="leading" secondItem="7YB-kB-n86" secondAttribute="leading" id="cyy-O2-GAi"/>
+                            <constraint firstItem="Ztb-iY-Dgp" firstAttribute="top" secondItem="cWb-fR-T5J" secondAttribute="bottom" constant="22" id="hDN-pc-UuP"/>
+                            <constraint firstItem="wIC-DQ-3Pu" firstAttribute="centerX" secondItem="wHq-V8-otg" secondAttribute="centerX" id="krw-UR-jnY"/>
+                            <constraint firstItem="cWb-fR-T5J" firstAttribute="leading" secondItem="Ztb-iY-Dgp" secondAttribute="leading" id="o3G-jS-xCT"/>
+                            <constraint firstItem="wIC-DQ-3Pu" firstAttribute="top" secondItem="wHq-V8-otg" secondAttribute="bottom" constant="8" symbolic="YES" id="pmV-JS-zTB"/>
+                            <constraint firstItem="wIC-DQ-3Pu" firstAttribute="leading" secondItem="cWb-fR-T5J" secondAttribute="leading" id="ttf-4U-9RX"/>
+                            <constraint firstItem="cWb-fR-T5J" firstAttribute="trailing" secondItem="Ztb-iY-Dgp" secondAttribute="trailing" id="xA4-cS-gQQ"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Upload" id="WSj-LN-Gjg"/>
+                    <connections>
+                        <outlet property="PublicSwitch" destination="qyD-4o-yxd" id="Lsa-dX-at8"/>
+                        <outlet property="imageName" destination="cWb-fR-T5J" id="7tj-5Q-u1c"/>
+                        <outlet property="imageView" destination="wIC-DQ-3Pu" id="OQ0-e7-dMr"/>
+                        <outlet property="pickerView" destination="Ztb-iY-Dgp" id="dN8-XP-cLe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fy8-QS-aCY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="758" y="1041"/>
+            <point key="canvasLocation" x="786" y="861"/>
         </scene>
         <!--Splash Screen View Controller-->
         <scene sceneID="dRo-69-ubR">
@@ -143,14 +210,14 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWw-Z0-JU5">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWw-Z0-JU5">
                                 <rect key="frame" x="281" y="242" width="38" height="30"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <segue destination="D59-1O-KrC" kind="show" id="3Wb-kr-xwc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qrK-HA-ild">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qrK-HA-ild">
                                 <rect key="frame" x="272" y="348" width="57" height="30"/>
                                 <state key="normal" title="Register"/>
                                 <connections>
@@ -360,6 +427,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Ztk-pQ-YFX"/>
-        <segue reference="zTY-FT-2YR"/>
+        <segue reference="6EG-Ho-DJP"/>
     </inferredMetricsTieBreakers>
 </document>
