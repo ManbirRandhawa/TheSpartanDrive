@@ -10,7 +10,7 @@ import UIKit
 import Parse
 import FileBrowser
 
-class UploadViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class UploadViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
     @IBOutlet weak var pickerView: UIPickerView!
     
@@ -67,11 +67,16 @@ class UploadViewController: UIViewController,UIImagePickerControllerDelegate,UIN
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
        pickerView.delegate = self
+        
         pickerView.dataSource = self
+        
         imagePicker.delegate = self
         
         imageView.clipsToBounds = true
+        
+        self.imageName.delegate = self
         
        
         
@@ -84,6 +89,7 @@ class UploadViewController: UIViewController,UIImagePickerControllerDelegate,UIN
         imageView.image = nil
         pickerView.selectRow(0, inComponent: 0, animated: true)
         imageName.text = ""
+        PublicSwitch.on = true
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
@@ -136,6 +142,11 @@ class UploadViewController: UIViewController,UIImagePickerControllerDelegate,UIN
         
         dismissViewControllerAnimated(true, completion: nil)
         
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
     
