@@ -13,7 +13,9 @@ import FileBrowser
 class UploadViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var pickerView: UIPickerView!
+    
     let imagePicker = UIImagePickerController()
+    
     var currentUser = PFUser.currentUser()
     
     @IBOutlet weak var imageName: UITextField!
@@ -68,6 +70,8 @@ class UploadViewController: UIViewController,UIImagePickerControllerDelegate,UIN
        pickerView.delegate = self
         pickerView.dataSource = self
         imagePicker.delegate = self
+        
+        imageView.clipsToBounds = true
         
        
         
