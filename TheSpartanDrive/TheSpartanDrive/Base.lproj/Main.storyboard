@@ -379,13 +379,12 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5K-Ih-wEh">
-                                <rect key="frame" x="151" y="47" width="299" height="49"/>
+                                <rect key="frame" x="222" y="28" width="157" height="49"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="The Spartan Drive">
+                                    <fragment content="PicS'more">
                                         <attributes>
                                             <color key="NSColor" red="0.60000002384185791" green="0.40000000596046448" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="36" name="Futura-CondensedExtraBold"/>
-                                            <font key="NSOriginalFont" size="24" name="Futura-CondensedExtraBold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -396,11 +395,11 @@
                         <color key="backgroundColor" red="0.97647058819999999" green="0.94901960780000005" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="hnF-dd-XYn" firstAttribute="centerX" secondItem="s5K-Ih-wEh" secondAttribute="centerX" id="G7k-g7-7JA"/>
-                            <constraint firstItem="s5K-Ih-wEh" firstAttribute="top" secondItem="DW2-Ny-7oM" secondAttribute="bottom" constant="27" id="Hp4-oU-g5e"/>
+                            <constraint firstItem="s5K-Ih-wEh" firstAttribute="top" secondItem="DW2-Ny-7oM" secondAttribute="bottom" constant="8" id="Hp4-oU-g5e"/>
                             <constraint firstItem="bWw-Z0-JU5" firstAttribute="leading" secondItem="qrK-HA-ild" secondAttribute="leading" id="KVu-sX-Eup"/>
                             <constraint firstItem="bWw-Z0-JU5" firstAttribute="trailing" secondItem="qrK-HA-ild" secondAttribute="trailing" id="U9A-xP-XLq"/>
                             <constraint firstItem="9qS-d1-h9b" firstAttribute="top" secondItem="bWw-Z0-JU5" secondAttribute="bottom" constant="59" id="bnt-nw-NrG"/>
-                            <constraint firstItem="hnF-dd-XYn" firstAttribute="top" secondItem="s5K-Ih-wEh" secondAttribute="bottom" constant="26" id="gVo-2h-ngc"/>
+                            <constraint firstItem="hnF-dd-XYn" firstAttribute="top" secondItem="s5K-Ih-wEh" secondAttribute="bottom" constant="45" id="gVo-2h-ngc"/>
                             <constraint firstItem="qrK-HA-ild" firstAttribute="bottom" secondItem="9qS-d1-h9b" secondAttribute="top" id="k82-5d-HBK"/>
                             <constraint firstItem="bWw-Z0-JU5" firstAttribute="leading" secondItem="8iJ-uI-tZc" secondAttribute="leading" id="smk-aI-Rzp"/>
                             <constraint firstAttribute="trailing" secondItem="bWw-Z0-JU5" secondAttribute="trailing" id="yGs-TK-Hkz"/>
@@ -628,7 +627,7 @@
         <image name="usrImage" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Aqg-p7-pnW"/>
+        <segue reference="6EG-Ho-DJP"/>
         <segue reference="pjo-5a-oFk"/>
     </inferredMetricsTieBreakers>
 </document>
