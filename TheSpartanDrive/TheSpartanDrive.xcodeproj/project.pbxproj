@@ -30,6 +30,7 @@
 		4EB12FFB1CD8721600F25D9D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB12FFA1CD8721600F25D9D /* LoginViewController.swift */; };
 		4EB12FFD1CD8723E00F25D9D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB12FFC1CD8723E00F25D9D /* RegisterViewController.swift */; };
 		4EB12FFF1CD87BC300F25D9D /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB12FFE1CD87BC300F25D9D /* UploadViewController.swift */; };
+		4EEB6B351CDAEBAE0052A70B /* CustomBrowsePicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEB6B341CDAEBAE0052A70B /* CustomBrowsePicCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		4EB12FFA1CD8721600F25D9D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4EB12FFC1CD8723E00F25D9D /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		4EB12FFE1CD87BC300F25D9D /* UploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
+		4EEB6B341CDAEBAE0052A70B /* CustomBrowsePicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBrowsePicCell.swift; sourceTree = "<group>"; };
 		A7598432D6FBA49EB6FD8843 /* Pods-TheSpartanDrive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheSpartanDrive.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheSpartanDrive/Pods-TheSpartanDrive.release.xcconfig"; sourceTree = "<group>"; };
 		A81355C15A2661677A2BD99B /* Pods_TheSpartanDrive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheSpartanDrive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -122,6 +124,7 @@
 				4EB12FCD1CD86CD500F25D9D /* UserViewController.swift */,
 				4EB12FCF1CD86CD500F25D9D /* BrowseViewController.swift */,
 				4EB12FD11CD86CD500F25D9D /* Main.storyboard */,
+				4EEB6B341CDAEBAE0052A70B /* CustomBrowsePicCell.swift */,
 				4EB12FFE1CD87BC300F25D9D /* UploadViewController.swift */,
 				4EB12FD41CD86CD500F25D9D /* Assets.xcassets */,
 				4EB12FD61CD86CD500F25D9D /* LaunchScreen.storyboard */,
@@ -287,6 +290,7 @@
 				4EB12FCC1CD86CD500F25D9D /* AppDelegate.swift in Sources */,
 				4EB12FF91CD8719B00F25D9D /* SplashScreenViewController.swift in Sources */,
 				4EB12FFD1CD8723E00F25D9D /* RegisterViewController.swift in Sources */,
+				4EEB6B351CDAEBAE0052A70B /* CustomBrowsePicCell.swift in Sources */,
 				4EB12FFB1CD8721600F25D9D /* LoginViewController.swift in Sources */,
 				4EB12FCE1CD86CD500F25D9D /* UserViewController.swift in Sources */,
 			);

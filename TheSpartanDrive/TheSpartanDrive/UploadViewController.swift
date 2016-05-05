@@ -23,6 +23,15 @@ class UploadViewController: UIViewController,UIImagePickerControllerDelegate,UIN
     
     @IBOutlet weak var PublicSwitch: UISwitch!
     
+    @IBAction func selectBrowserFile(sender: AnyObject) {
+        
+        let fileBrowser = FileBrowser()
+        
+        self.presentViewController(fileBrowser, animated: true, completion: nil)
+    }
+   
+    
+    
     var pickerDataSource = ["Funny", "Cool", "Artistic", "Sports", "Cars", "Food"]
     
     @IBAction func UploadFile(sender: AnyObject) {
