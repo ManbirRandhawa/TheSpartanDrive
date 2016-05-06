@@ -8,8 +8,10 @@
 
 import UIKit
 import Parse
+import MessageUI
+import Foundation
 
-class BrowseViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource {
+class BrowseViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource, MFMessageComposeViewControllerDelegate {
 
     @IBOutlet weak var pickerView: UIPickerView!
     
@@ -17,13 +19,109 @@ class BrowseViewController: UIViewController,UIPickerViewDelegate, UIPickerViewD
     
     var imagesByType = [PFObject]()
     
+    @IBOutlet var longPressRecognizer: UILongPressGestureRecognizer!
+    
     var imagetypes = String()
     
+    var visitingThisUser = PFUser()
+    
+    @IBAction func usernameClicked(sender: AnyObject) {
+        
+        
+        
+        
+    }
      var pickerDataSource = ["Funny", "Cool", "Artistic", "Sports", "Cars", "Food"]
     
+    @IBOutlet weak var usernameButton: UIButton!
+  
+    
+    func canSendText() -> Bool {
+        return MFMessageComposeViewController.canSendText()
+    }
     
     
+    func sendMessage(gameFile:PFFile) {
+        
+        if MFMessageComposeViewController.canSendText()
+        {
+            var messageVC = MFMessageComposeViewController()
+            
+            // let profileImageData = UIImageJPEGRepresentation((gameFile["Upload"])! as! UIImage, 0.5)
+            
+            messageVC.body = "Look at this S'more someone took on PicS'more!";
+           
+            messageVC.recipients = [""]
+           
+            
+            gameFile.getDataInBackgroundWithBlock { (result, error) in
+             
+             let imageUp = UIImage(data:result!)
+             
+           messageVC.addAttachmentData(UIImageJPEGRepresentation(imageUp!, 0.3)!, typeIdentifier:"image/jpg", filename: "imagesend.jpg")
+           
+             
+             }
+             messageVC.messageComposeDelegate = self;
+            
+            
+            
+            //controller.addAttachmentData(UIImageJPEGRepresentation(UIImage(named: "images.jpg")!, 1)!, typeIdentifier: "image/jpg", filename: "images.jpg") - See more at: http://www.theappguruz.com/blog/social-messageui-framework-swift#sthash.CGsTtftH.dpuf
+            presentViewController(messageVC, animated: true, completion: nil)
+        } else {
+            print("Error with texting!")
+            let errorAlert = UIAlertView(title: "Cannot Send Text Message", message: "Your device is not able to send text messages.", delegate: self, cancelButtonTitle: "OK")
+            errorAlert.show()
+        }
+        
+        
+    }
     
+    func messageComposeViewController(controller: MFMessageComposeViewController, didFinishWithResult result: MessageComposeResult) {
+        switch (result) {
+        case MessageComposeResultCancelled:
+            print("Message was cancelled")
+            self.dismissViewControllerAnimated(true, completion: nil)
+        case MessageComposeResultFailed:
+            print("Message failed")
+            self.dismissViewControllerAnimated(true, completion: nil)
+        case MessageComposeResultSent:
+            print("Message was sent")
+            self.dismissViewControllerAnimated(true, completion: nil)
+        default:
+            break;
+        }
+    }
+    
+    @IBAction func handleLongPress(sender: UILongPressGestureRecognizer) {
+        
+        if (sender.state == UIGestureRecognizerState.Began)
+        {
+            
+            var p = sender.locationInView(self.tableView)
+            
+            if let indexPath = self.tableView.indexPathForRowAtPoint(p)
+            {
+                
+                let cell = self.tableView(self.tableView, cellForRowAtIndexPath: indexPath)
+                if (cell.highlighted)
+                {
+                    
+                    let gameString = imagesByType[indexPath.row]
+                    
+                    print(gameString["imageName"] as! String)
+                    
+                   var imagestodisplay = imagesByType[indexPath.row]["Upload"] as! PFFile
+                    
+                    sendMessage(imagestodisplay)
+                }
+                
+                
+            }
+            
+        }
+        
+    }
 
     
     override func viewDidLoad() {
@@ -90,8 +188,52 @@ class BrowseViewController: UIViewController,UIPickerViewDelegate, UIPickerViewD
             cell.displayImage?.image = UIImage(data:result!)
         }
         
+        var username = imagesByType[indexPath.row]["Owner"] as! PFUser
+        
+        
+        username.fetchIfNeededInBackgroundWithBlock { (object: PFObject?, error:NSError?) in
+            cell.usernameButton.setTitle(username.username, forState: UIControlState.Normal)
+
+        }
+      
+       cell.usernameButton.tag = indexPath.row
+        
+        cell.usernameButton.addTarget(self, action: "userProfileAction:", forControlEvents: .TouchUpInside)
+        
+       // cell.usernameButton.setTitle(username.username, forState: UIControlState.Normal)
+        
+        
         return cell
     }
+    
+    @IBAction func userProfileAction(sender: UIButton)
+    {
+        
+        let usernamestring = imagesByType[sender.tag]["Owner"] as! PFUser
+        
+        
+       usernamestring.fetchIfNeededInBackgroundWithBlock {
+        (object: PFObject?, error:NSError?) in
+        
+        let sharedPref = NSUserDefaults.standardUserDefaults()
+        sharedPref.setValue(usernamestring.objectId!, forKey: "VisitingUserProfile")
+            
+            
+        }
+        
+       
+        
+        
+        performSegueWithIdentifier("visitUserProfile", sender: self)
+        
+    }
+    
+  
+    
+    func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
+        print(indexPath.row)
+    }
+    
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1

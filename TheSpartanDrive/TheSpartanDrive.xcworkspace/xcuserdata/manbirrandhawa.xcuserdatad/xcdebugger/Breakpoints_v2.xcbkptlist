@@ -71,12 +71,106 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TheSpartanDrive/UserUploadHistoryViewController.swift"
-            timestampString = "484126065.260791"
+            timestampString = "484183805.088425"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "getPicturesByTypePublic()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheSpartanDrive/BrowseViewController.swift"
+            timestampString = "484190612.55207"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "usernameClicked(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TheSpartanDrive.BrowseViewController.pickerDataSource.getter : Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "TheSpartanDrive"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/manbirrandhawa/Documents/TheSpartanDrive/TheSpartanDrive/TheSpartanDrive/BrowseViewController.swift"
+                  timestampString = "484184288.469908"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "35">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TheSpartanDrive.BrowseViewController.pickerDataSource.setter : Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "TheSpartanDrive"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/manbirrandhawa/Documents/TheSpartanDrive/TheSpartanDrive/TheSpartanDrive/BrowseViewController.swift"
+                  timestampString = "484184288.470091"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "65">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TheSpartanDrive.BrowseViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; TheSpartanDrive.BrowseViewController"
+                  moduleName = "TheSpartanDrive"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/manbirrandhawa/Documents/TheSpartanDrive/TheSpartanDrive/TheSpartanDrive/BrowseViewController.swift"
+                  timestampString = "484184288.470225"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "304">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TheSpartanDrive.BrowseViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;TheSpartanDrive.BrowseViewController&gt;"
+                  moduleName = "TheSpartanDrive"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/manbirrandhawa/Documents/TheSpartanDrive/TheSpartanDrive/TheSpartanDrive/BrowseViewController.swift"
+                  timestampString = "484184288.470365"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "216">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheSpartanDrive/UserProfilePageViewController.swift"
+            timestampString = "484196485.440608"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "viewWillAppear(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

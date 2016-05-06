@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'E1083AEA6B4C8CD6F4C23A95'
+               BlueprintIdentifier = '61CED45AAFF5B30F51F3E842'
                BlueprintName = 'FileBrowser'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'FileBrowser.framework'>

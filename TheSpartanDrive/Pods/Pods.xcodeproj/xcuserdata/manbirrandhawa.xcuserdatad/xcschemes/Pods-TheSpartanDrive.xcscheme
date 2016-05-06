@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '804E404DCD4AF36E833D6058'
+               BlueprintIdentifier = 'FE545F9B8E5485F8441D1423'
                BlueprintName = 'Pods-TheSpartanDrive'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_TheSpartanDrive.framework'>
