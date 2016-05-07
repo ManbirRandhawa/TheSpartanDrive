@@ -77,6 +77,7 @@ class UserProfilePageViewController : UIViewController, UITableViewDataSource, U
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        profileImageView.layer.cornerRadius = profileImageView.frame.size.width/2
         let sharedPref = NSUserDefaults.standardUserDefaults()
        let userYouAreVisiting = sharedPref.valueForKey("VisitingUserProfile")
        print(userYouAreVisiting!)
@@ -159,8 +160,9 @@ class UserProfilePageViewController : UIViewController, UITableViewDataSource, U
                             if (error == nil)
                             {
                                 print("PROFILE IMAGE AVAILABLE")
-                                self.profileImageView.contentMode = .ScaleAspectFit
+                                self.profileImageView.contentMode = .ScaleAspectFill
                                 self.profileImageView.image = UIImage(data: result!)
+                                self.profileImageView.clipsToBounds = true
                                 
                                 
                             }else {

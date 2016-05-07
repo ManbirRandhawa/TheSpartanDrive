@@ -29,8 +29,9 @@ class UserViewController: UIViewController,UIImagePickerControllerDelegate, UINa
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            profileImageView.contentMode = .ScaleAspectFit
+            profileImageView.contentMode = .ScaleAspectFill
             profileImageView.image = pickedImage
+            profileImageView.clipsToBounds = true
             
             let profileImageData = UIImageJPEGRepresentation(profileImageView.image!, 0.5)
             
@@ -74,9 +75,9 @@ class UserViewController: UIViewController,UIImagePickerControllerDelegate, UINa
                             if (error == nil)
                             {
                                 print("PROFILE IMAGE AVAILABLE")
-                                self.profileImageView.contentMode = .ScaleAspectFit
+                                self.profileImageView.contentMode = .ScaleAspectFill
                                 self.profileImageView.image = UIImage(data: result!)
-                                
+                                self.profileImageView.clipsToBounds = true
                                 
                             }else {
                                 print("NO profile IMAGE")
@@ -108,7 +109,7 @@ class UserViewController: UIViewController,UIImagePickerControllerDelegate, UINa
         // Do any additional setup after loading the view, typically from a nib.
         imagePicker.delegate = self
         profileImageView.layer.cornerRadius = profileImageView.frame.size.width/2
-        profileImageView.clipsToBounds = true
+        
         
         
         if currentUser != nil

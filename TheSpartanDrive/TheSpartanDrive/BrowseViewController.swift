@@ -131,6 +131,16 @@ class BrowseViewController: UIViewController,UIPickerViewDelegate, UIPickerViewD
         pickerView.delegate = self
         pickerView.dataSource = self
         
+       
+        
+        
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        imagetypes = "Funny"
+        getPicturesByType()
     }
     
      func getPicturesByType() -> [PFObject]
@@ -251,8 +261,9 @@ class BrowseViewController: UIViewController,UIPickerViewDelegate, UIPickerViewD
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         imagetypes = pickerDataSource[row]
+        
         getPicturesByType()
-        self.tableView.reloadData()
+    self.tableView.reloadData()
         
     }
 
