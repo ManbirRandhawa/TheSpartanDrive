@@ -263,7 +263,57 @@ class UserUploadHistoryViewController : UIViewController,UIPickerViewDelegate, U
             cell.privacySettingLabel.text = "Private"
         }
         
+        cell.deletePicButton.tag = indexPath.row
+        
+        cell.deletePicButton.addTarget(self, action: "deletePicAction:", forControlEvents: .TouchUpInside)
+        
         return cell
+    }
+    
+    
+    @IBAction func deletePicAction(sender: UIButton)
+    {
+        
+        
+        let deleteThisImage = imagesByType[sender.tag]
+        
+        
+        deleteThisImage.fetchIfNeededInBackgroundWithBlock {
+            (object: PFObject?, error:NSError?) in
+            
+            deleteThisImage.deleteInBackgroundWithBlock({ (true, error) in
+                if (true)
+                {
+                    let successAlert = UIAlertView(title: "PicS'more", message: "Deleted!", delegate: self, cancelButtonTitle: "OK")
+                    successAlert.show()
+                    
+                    if (self.imagetypes == "Public")
+                    {
+                        print("public")
+                        self.getPicturesByTypePublic()
+                    } else if (self.imagetypes == "Private") {
+                        print("private")
+                        self.getPicturesByTypePrivate()
+                    } else {
+                        print("private & public")
+                        self.getAllPicturesByUser()
+                    }
+                    self.tableView.reloadData()
+                }
+                else {
+                    let errorAlert = UIAlertView(title: "PicS'more", message: "Error Deleting!", delegate: self, cancelButtonTitle: "OK")
+                    errorAlert.show()
+                }
+            })
+            
+            
+        }
+        
+        
+        
+        
+     
+        
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {

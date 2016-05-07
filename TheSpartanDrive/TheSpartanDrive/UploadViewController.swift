@@ -19,6 +19,7 @@ class UploadViewController: UIViewController,UIImagePickerControllerDelegate,UIN
     var currentUser = PFUser.currentUser()
     
     @IBOutlet weak var imageName: UITextField!
+    
     var imagetypes = String()
     
     @IBOutlet weak var imageView: UIImageView!
@@ -34,36 +35,44 @@ class UploadViewController: UIViewController,UIImagePickerControllerDelegate,UIN
    
     
     
-    var pickerDataSource = ["Funny", "Cool", "Artistic", "Sports", "Cars", "Food"]
+    var pickerDataSource = ["","Funny", "Cool", "Artistic", "Sports", "Cars", "Food"]
     
     @IBAction func UploadFile(sender: AnyObject) {
         
-        
-       let profileImageData = UIImageJPEGRepresentation((imageView.image)!, 0.5)
-        
-        if (profileImageData != nil)
+        if (imagetypes == "")
         {
-            let profileImageFile = PFFile(data: profileImageData!)
+            let successAlert = UIAlertView(title: "PicS'more", message: "Choose a type!", delegate: self, cancelButtonTitle: "OK")
+            successAlert.show()
+        } else {
             
-            var newUpload = PFObject(className:"UserUploads")
-            newUpload["Upload"] = profileImageFile
-            newUpload["Owner"] = currentUser
-            newUpload["imageName"] = imageName.text
-            newUpload["Type"] = imagetypes
-            if PublicSwitch.on {
-                newUpload["Public"] = true
-            } else {
-                newUpload["Public"] = false
+            let profileImageData = UIImageJPEGRepresentation((imageView.image)!, 0.5)
+            
+            if (profileImageData != nil)
+            {
+                let profileImageFile = PFFile(data: profileImageData!)
+                
+                var newUpload = PFObject(className:"UserUploads")
+                newUpload["Upload"] = profileImageFile
+                newUpload["Owner"] = currentUser
+                newUpload["imageName"] = imageName.text
+                newUpload["Type"] = imagetypes
+                if PublicSwitch.on {
+                    newUpload["Public"] = true
+                } else {
+                    newUpload["Public"] = false
+                }
+                
+                newUpload.saveInBackground()
+                
+                print("SUCCESSFUL IMAGE UPLOAD")
+                clearEverything()
             }
-            
-            newUpload.saveInBackground()
-            
-            print("SUCCESSFUL IMAGE UPLOAD")
-            clearEverything()
+            else {
+                print("ERROR SAVING IMAGE TO PARSE")
+            }
         }
-        else {
-            print("ERROR SAVING IMAGE TO PARSE")
-        }
+        
+      
     }
     override func viewDidLoad() {
         super.viewDidLoad()

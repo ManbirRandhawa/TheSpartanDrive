@@ -14,6 +14,7 @@ class CustomBrowsePicCell: UITableViewCell {
     @IBOutlet weak var privacySettingLabel: UILabel!
     @IBOutlet weak var usernameButton: UIButton!
     
+    @IBOutlet weak var deletePicButton: UIButton!
     @IBOutlet weak var usernameProfileButton: UIButton!
     @IBOutlet weak var commentLabelBoxProfile: UILabel!
     override func awakeFromNib() {
