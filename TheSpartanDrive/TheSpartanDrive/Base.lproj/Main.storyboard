@@ -430,6 +430,9 @@
                             <constraint firstItem="s5K-Ih-wEh" firstAttribute="centerX" secondItem="bWw-Z0-JU5" secondAttribute="centerX" id="ywR-pi-3ea"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="49e-Tb-3d3" kind="show" identifier="alreadyLoggedIn" id="e1k-Kl-AkO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4uP-dg-vEx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -943,7 +946,7 @@
         <image name="usrImage" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zLg-PR-1Qx"/>
+        <segue reference="e1k-Kl-AkO"/>
         <segue reference="Aqg-p7-pnW"/>
     </inferredMetricsTieBreakers>
 </document>
