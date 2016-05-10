@@ -18,6 +18,7 @@ class UserProfilePageViewController : UIViewController, UITableViewDataSource, U
     @IBOutlet weak var profilePageUsernameField: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
     
+    
     var hostuser = PFUser()
     
     var commentss = [PFObject]()
@@ -196,18 +197,65 @@ class UserProfilePageViewController : UIViewController, UITableViewDataSource, U
         var userWhoPosted = commentss[indexPath.row]["PosterOfUserComment"] as! PFUser
         userWhoPosted.fetchIfNeededInBackgroundWithBlock { (object:PFObject?, error:NSError?) in
               cell.usernameProfileButton.setTitle(userWhoPosted.username!, forState: UIControlState.Normal)
+           
+            if (userWhoPosted.objectId == PFUser.currentUser()?.objectId)
+            {
+                cell.deleteComment.hidden = false
+            }
+            
+            
         }
+        
+        cell.deleteComment.tag = indexPath.row
+        
+        cell.deleteComment.addTarget(self, action: "deleteCommentAction:", forControlEvents: .TouchUpInside)
         
         
         
         return cell
         
     }
+
+
+@IBAction func deleteCommentAction(sender: UIButton)
+{
+    
+    
+    let deleteThisComment = commentss[sender.tag]
+    
+    
+    deleteThisComment.fetchIfNeededInBackgroundWithBlock {
+        (object: PFObject?, error:NSError?) in
+        
+        deleteThisComment.deleteInBackgroundWithBlock({ (true, error) in
+            if (true)
+            {
+                let successAlert = UIAlertView(title: "PicS'more", message: "Deleted!", delegate: self, cancelButtonTitle: "OK")
+                successAlert.show()
+                self.queryForComments(self.hostuser)
+            }
+            else {
+                let errorAlert = UIAlertView(title: "PicS'more", message: "Error Deleting!", delegate: self, cancelButtonTitle: "OK")
+                errorAlert.show()
+            }
+        })
         
         
     }
+    
+    
+    
+    
+    
+    
+}
 
-    
-    
-    
+
+
+
+    }
+
+
+
+
 
