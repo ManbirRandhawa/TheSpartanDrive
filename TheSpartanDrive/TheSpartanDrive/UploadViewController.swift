@@ -35,7 +35,7 @@ class UploadViewController: UIViewController,UIImagePickerControllerDelegate,UIN
    
     
     
-    var pickerDataSource = ["","Funny", "Cool", "Artistic", "Sports", "Cars", "Food"]
+    var pickerDataSource = ["","😂", "😎", "🌅", "🏀", "🚗", "🍔"]
     
     @IBAction func UploadFile(sender: AnyObject) {
         

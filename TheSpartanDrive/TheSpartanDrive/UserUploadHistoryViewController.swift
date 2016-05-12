@@ -24,7 +24,7 @@ class UserUploadHistoryViewController : UIViewController,UIPickerViewDelegate, U
     
     var imagetypes = String()
     
-    var pickerDataSource = ["Public", "Private", "Both"]
+    var pickerDataSource = ["Public", "Private", "All"]
     
     @IBOutlet var longPressRecognizer: UILongPressGestureRecognizer!
     var currentUser = PFUser.currentUser()
@@ -35,6 +35,8 @@ class UserUploadHistoryViewController : UIViewController,UIPickerViewDelegate, U
         
         pickerView.delegate = self
         pickerView.dataSource = self
+        
+        getPicturesByTypePublic()
         
     }
     
@@ -255,6 +257,8 @@ class UserUploadHistoryViewController : UIViewController,UIPickerViewDelegate, U
         imagestodisplay.getDataInBackgroundWithBlock { (result, error) in
             
             cell.displayImage?.image = UIImage(data:result!)
+            cell.displayImage?.contentMode = .ScaleAspectFit
+            cell.displayImage?.clipsToBounds = true
         }
         if privacyLvl
         {

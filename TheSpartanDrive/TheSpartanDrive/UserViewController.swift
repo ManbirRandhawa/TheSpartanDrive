@@ -19,6 +19,7 @@ class UserViewController: UIViewController,UIImagePickerControllerDelegate, UINa
     
     var profilePicAvailable = Bool()
 
+    @IBOutlet weak var profileLabel: UILabel!
     @IBAction func profilePictureUpload(sender: AnyObject) {
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .PhotoLibrary
@@ -110,6 +111,12 @@ class UserViewController: UIViewController,UIImagePickerControllerDelegate, UINa
         imagePicker.delegate = self
         profileImageView.layer.cornerRadius = profileImageView.frame.size.width/2
         
+        let tapGesture = UITapGestureRecognizer(target: self, action: "imageTapped:")
+        tapGesture.numberOfTapsRequired = 1
+        profileImageView.userInteractionEnabled = true
+        profileImageView.addGestureRecognizer(tapGesture)
+     
+        profileLabel.text = currentUser?.username
         
         
         if currentUser != nil
@@ -120,6 +127,22 @@ class UserViewController: UIViewController,UIImagePickerControllerDelegate, UINa
         }
         
     }
+    
+    
+   
+    
+    func imageTapped(gesture: UIGestureRecognizer) {
+        // if the tapped view is a UIImageView then set it to imageview
+        if let profileImageView = gesture.view as? UIImageView {
+            imagePicker.allowsEditing = false
+            imagePicker.sourceType = .PhotoLibrary
+            
+            presentViewController(imagePicker, animated: true, completion: nil)
+            //Here you can initiate your new ViewController
+            
+        }
+    }
+
     
     
     override func viewWillAppear(animated: Bool) {

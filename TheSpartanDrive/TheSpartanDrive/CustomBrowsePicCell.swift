@@ -21,6 +21,7 @@ class CustomBrowsePicCell: UITableViewCell {
     @IBOutlet weak var usernameProfileButton: UIButton!
     @IBOutlet weak var commentLabelBoxProfile: UILabel!
     
+    @IBOutlet weak var imageIndic: UIActivityIndicatorView!
     
     
     override func awakeFromNib() {

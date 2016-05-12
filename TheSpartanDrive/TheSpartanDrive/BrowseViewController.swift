@@ -15,6 +15,7 @@ class BrowseViewController: UIViewController,UIPickerViewDelegate, UIPickerViewD
 
     @IBOutlet weak var pickerView: UIPickerView!
     
+    
     @IBOutlet weak var tableView: UITableView!
     
     var imagesByType = [PFObject]()
@@ -26,12 +27,9 @@ class BrowseViewController: UIViewController,UIPickerViewDelegate, UIPickerViewD
     var visitingThisUser = PFUser()
     
     @IBAction func usernameClicked(sender: AnyObject) {
-        
-        
-        
-        
+     
     }
-     var pickerDataSource = ["Funny", "Cool", "Artistic", "Sports", "Cars", "Food"]
+     var pickerDataSource = ["😁","😂", "😎", "🌅", "🏀", "🚗", "🍔"]
     
     @IBOutlet weak var usernameButton: UIButton!
   
@@ -65,8 +63,7 @@ class BrowseViewController: UIViewController,UIPickerViewDelegate, UIPickerViewD
              messageVC.messageComposeDelegate = self;
             
             
-            
-            //controller.addAttachmentData(UIImageJPEGRepresentation(UIImage(named: "images.jpg")!, 1)!, typeIdentifier: "image/jpg", filename: "images.jpg") - See more at: http://www.theappguruz.com/blog/social-messageui-framework-swift#sthash.CGsTtftH.dpuf
+           
             presentViewController(messageVC, animated: true, completion: nil)
         } else {
             print("Error with texting!")
@@ -137,41 +134,77 @@ class BrowseViewController: UIViewController,UIPickerViewDelegate, UIPickerViewD
         
     }
     
+    enum smileys: String {
+        case 😂 = "Funny"
+        
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        imagetypes = "Funny"
+        imagetypes = "😁"
+       
         getPicturesByType()
     }
     
      func getPicturesByType() -> [PFObject]
     {
          imagesByType = [PFObject]()
-        
-        let query = PFQuery(className: "UserUploads")
-        query.whereKey("Type", equalTo: imagetypes)
-        query.whereKey("Public", equalTo: true)
-        query.findObjectsInBackgroundWithBlock{(imageuploads: [PFObject]?, error: NSError?) in
-            
-            if error == nil
-            {
-                if let imageuploads = imageuploads {
-                    for images in imageuploads {
-                        
-                        self.imagesByType.append(images)
-                        
-                        
-                    }
-                    
-                   self.tableView.reloadData()
-                }
-                print(self.imagesByType.count)
+        if (imagetypes == "😁")
+        {
+            let query = PFQuery(className: "UserUploads")
+           // query.whereKey("Type", equalTo: imagetypes)
+            query.whereKey("Public", equalTo: true)
+            query.orderByDescending("createdAt")
+            query.findObjectsInBackgroundWithBlock{(imageuploads: [PFObject]?, error: NSError?) in
                 
-            }else{
-                print("no success")
+                if error == nil
+                {
+                    if let imageuploads = imageuploads {
+                        for images in imageuploads {
+                            
+                            self.imagesByType.append(images)
+                            
+                            
+                        }
+                        
+                        self.tableView.reloadData()
+                    }
+                    print(self.imagesByType.count)
+                    
+                }else{
+                    print("no success")
+                }
+                
             }
-            
+        } else {
+            let query = PFQuery(className: "UserUploads")
+            query.whereKey("Type", equalTo: imagetypes)
+            query.whereKey("Public", equalTo: true)
+            query.orderByDescending("createdAt")
+            query.findObjectsInBackgroundWithBlock{(imageuploads: [PFObject]?, error: NSError?) in
+                
+                if error == nil
+                {
+                    if let imageuploads = imageuploads {
+                        for images in imageuploads {
+                            
+                            self.imagesByType.append(images)
+                            
+                            
+                        }
+                        
+                        self.tableView.reloadData()
+                    }
+                    print(self.imagesByType.count)
+                    
+                }else{
+                    print("no success")
+                }
+                
+            }
+
         }
-        
+     
         return imagesByType
         
     }
@@ -189,22 +222,27 @@ class BrowseViewController: UIViewController,UIPickerViewDelegate, UIPickerViewD
         let cell = self.tableView.dequeueReusableCellWithIdentifier("cell1", forIndexPath: indexPath) as! CustomBrowsePicCell
         
      
-       
+       cell.imageIndic.startAnimating()
+        var username = imagesByType[indexPath.row]["Owner"] as! PFUser
+        
+        
+        username.fetchIfNeededInBackgroundWithBlock { (object: PFObject?, error:NSError?) in
+            cell.usernameButton.setTitle(username.username, forState: UIControlState.Normal)
+            
+        }
+        
         
         var imagestodisplay = imagesByType[indexPath.row]["Upload"] as! PFFile
         
         imagestodisplay.getDataInBackgroundWithBlock { (result, error) in
             
             cell.displayImage?.image = UIImage(data:result!)
+            cell.imageIndic.stopAnimating()
+            cell.displayImage.contentMode = .ScaleAspectFit
+            cell.displayImage.clipsToBounds = true
         }
         
-        var username = imagesByType[indexPath.row]["Owner"] as! PFUser
-        
-        
-        username.fetchIfNeededInBackgroundWithBlock { (object: PFObject?, error:NSError?) in
-            cell.usernameButton.setTitle(username.username, forState: UIControlState.Normal)
-
-        }
+       
       
        cell.usernameButton.tag = indexPath.row
         
@@ -261,6 +299,7 @@ class BrowseViewController: UIViewController,UIPickerViewDelegate, UIPickerViewD
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         imagetypes = pickerDataSource[row]
+     
         
         getPicturesByType()
     self.tableView.reloadData()

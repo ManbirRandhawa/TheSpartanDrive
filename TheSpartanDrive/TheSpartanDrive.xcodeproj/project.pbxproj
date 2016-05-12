@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		2ECFA8CB53D838FA20089471 /* Pods_TheSpartanDrive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A81355C15A2661677A2BD99B /* Pods_TheSpartanDrive.framework */; };
+		4E3E7AC71CE2D41A00BF041E /* AkiraTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E7ABC1CE2D41A00BF041E /* AkiraTextField.swift */; };
+		4E3E7AC81CE2D41A00BF041E /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E7ABD1CE2D41A00BF041E /* HoshiTextField.swift */; };
+		4E3E7AC91CE2D41A00BF041E /* IsaoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E7ABE1CE2D41A00BF041E /* IsaoTextField.swift */; };
+		4E3E7ACA1CE2D41A00BF041E /* JiroTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E7ABF1CE2D41A00BF041E /* JiroTextField.swift */; };
+		4E3E7ACB1CE2D41A00BF041E /* KaedeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E7AC01CE2D41A00BF041E /* KaedeTextField.swift */; };
+		4E3E7ACC1CE2D41A00BF041E /* MadokaTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E7AC11CE2D41A00BF041E /* MadokaTextField.swift */; };
+		4E3E7ACD1CE2D41A00BF041E /* MinoruTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E7AC21CE2D41A00BF041E /* MinoruTextField.swift */; };
+		4E3E7ACE1CE2D41A00BF041E /* TextFieldsEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E7AC41CE2D41A00BF041E /* TextFieldsEffects.swift */; };
+		4E3E7ACF1CE2D41A00BF041E /* YokoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E7AC51CE2D41A00BF041E /* YokoTextField.swift */; };
+		4E3E7AD01CE2D41A00BF041E /* YoshikoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E7AC61CE2D41A00BF041E /* YoshikoTextField.swift */; };
 		4E83E91F1CDB246800995812 /* UserUploadHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E83E91E1CDB246800995812 /* UserUploadHistoryViewController.swift */; };
 		4EB12FCC1CD86CD500F25D9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB12FCB1CD86CD500F25D9D /* AppDelegate.swift */; };
 		4EB12FCE1CD86CD500F25D9D /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB12FCD1CD86CD500F25D9D /* UserViewController.swift */; };
@@ -37,6 +47,17 @@
 
 /* Begin PBXFileReference section */
 		4030A63CEE7039A61286CECB /* Pods-TheSpartanDrive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheSpartanDrive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TheSpartanDrive/Pods-TheSpartanDrive.debug.xcconfig"; sourceTree = "<group>"; };
+		4E3E7ABC1CE2D41A00BF041E /* AkiraTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AkiraTextField.swift; sourceTree = "<group>"; };
+		4E3E7ABD1CE2D41A00BF041E /* HoshiTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoshiTextField.swift; sourceTree = "<group>"; };
+		4E3E7ABE1CE2D41A00BF041E /* IsaoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsaoTextField.swift; sourceTree = "<group>"; };
+		4E3E7ABF1CE2D41A00BF041E /* JiroTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JiroTextField.swift; sourceTree = "<group>"; };
+		4E3E7AC01CE2D41A00BF041E /* KaedeTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KaedeTextField.swift; sourceTree = "<group>"; };
+		4E3E7AC11CE2D41A00BF041E /* MadokaTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MadokaTextField.swift; sourceTree = "<group>"; };
+		4E3E7AC21CE2D41A00BF041E /* MinoruTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinoruTextField.swift; sourceTree = "<group>"; };
+		4E3E7AC31CE2D41A00BF041E /* TextFieldEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldEffects.h; sourceTree = "<group>"; };
+		4E3E7AC41CE2D41A00BF041E /* TextFieldsEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldsEffects.swift; sourceTree = "<group>"; };
+		4E3E7AC51CE2D41A00BF041E /* YokoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YokoTextField.swift; sourceTree = "<group>"; };
+		4E3E7AC61CE2D41A00BF041E /* YoshikoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoshikoTextField.swift; sourceTree = "<group>"; };
 		4E83E91E1CDB246800995812 /* UserUploadHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserUploadHistoryViewController.swift; sourceTree = "<group>"; };
 		4EB12FC81CD86CD500F25D9D /* TheSpartanDrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheSpartanDrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EB12FCB1CD86CD500F25D9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,9 +113,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E3E7AD11CE2D42700BF041E /* textFields */ = {
+			isa = PBXGroup;
+			children = (
+				4E3E7ABC1CE2D41A00BF041E /* AkiraTextField.swift */,
+				4E3E7ABD1CE2D41A00BF041E /* HoshiTextField.swift */,
+				4E3E7ABE1CE2D41A00BF041E /* IsaoTextField.swift */,
+				4E3E7ABF1CE2D41A00BF041E /* JiroTextField.swift */,
+				4E3E7AC01CE2D41A00BF041E /* KaedeTextField.swift */,
+				4E3E7AC11CE2D41A00BF041E /* MadokaTextField.swift */,
+				4E3E7AC21CE2D41A00BF041E /* MinoruTextField.swift */,
+				4E3E7AC31CE2D41A00BF041E /* TextFieldEffects.h */,
+				4E3E7AC41CE2D41A00BF041E /* TextFieldsEffects.swift */,
+				4E3E7AC51CE2D41A00BF041E /* YokoTextField.swift */,
+				4E3E7AC61CE2D41A00BF041E /* YoshikoTextField.swift */,
+			);
+			name = textFields;
+			sourceTree = "<group>";
+		};
 		4EB12FBF1CD86CD500F25D9D = {
 			isa = PBXGroup;
 			children = (
+				4E3E7AD11CE2D42700BF041E /* textFields */,
 				4EB12FF61CD86EC500F25D9D /* libsqlite3.tbd */,
 				4EB12FF41CD86EBD00F25D9D /* libz.tbd */,
 				4EB12FF21CD86E9300F25D9D /* SystemConfiguration.framework */,
@@ -203,7 +243,7 @@
 				TargetAttributes = {
 					4EB12FC71CD86CD500F25D9D = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 39Q6799377;
+						DevelopmentTeam = 87M8YUM3XS;
 					};
 				};
 			};
@@ -293,14 +333,24 @@
 			files = (
 				4EB12FD01CD86CD500F25D9D /* BrowseViewController.swift in Sources */,
 				4EB12FFF1CD87BC300F25D9D /* UploadViewController.swift in Sources */,
+				4E3E7ACD1CE2D41A00BF041E /* MinoruTextField.swift in Sources */,
 				4EB12FCC1CD86CD500F25D9D /* AppDelegate.swift in Sources */,
+				4E3E7AC81CE2D41A00BF041E /* HoshiTextField.swift in Sources */,
 				4EB12FF91CD8719B00F25D9D /* SplashScreenViewController.swift in Sources */,
 				4EB605B11CDC18F900CADD25 /* UserProfilePageViewController.swift in Sources */,
+				4E3E7ACC1CE2D41A00BF041E /* MadokaTextField.swift in Sources */,
+				4E3E7ACF1CE2D41A00BF041E /* YokoTextField.swift in Sources */,
+				4E3E7ACB1CE2D41A00BF041E /* KaedeTextField.swift in Sources */,
 				4EB12FFD1CD8723E00F25D9D /* RegisterViewController.swift in Sources */,
 				4E83E91F1CDB246800995812 /* UserUploadHistoryViewController.swift in Sources */,
+				4E3E7AC91CE2D41A00BF041E /* IsaoTextField.swift in Sources */,
 				4EEB6B351CDAEBAE0052A70B /* CustomBrowsePicCell.swift in Sources */,
 				4EB12FFB1CD8721600F25D9D /* LoginViewController.swift in Sources */,
 				4EB12FCE1CD86CD500F25D9D /* UserViewController.swift in Sources */,
+				4E3E7AD01CE2D41A00BF041E /* YoshikoTextField.swift in Sources */,
+				4E3E7AC71CE2D41A00BF041E /* AkiraTextField.swift in Sources */,
+				4E3E7ACE1CE2D41A00BF041E /* TextFieldsEffects.swift in Sources */,
+				4E3E7ACA1CE2D41A00BF041E /* JiroTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,7 +466,7 @@
 			baseConfigurationReference = 4030A63CEE7039A61286CECB /* Pods-TheSpartanDrive.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: manchintz@hotmail.com (MJHUYH4KGR)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -427,7 +477,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ttpm.TheSpartanDrive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "747fc644-35e2-44fa-8a49-131262fa9f2e";
 			};
 			name = Debug;
 		};
@@ -436,7 +486,7 @@
 			baseConfigurationReference = A7598432D6FBA49EB6FD8843 /* Pods-TheSpartanDrive.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: manchintz@hotmail.com (MJHUYH4KGR)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -447,7 +497,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ttpm.TheSpartanDrive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "747fc644-35e2-44fa-8a49-131262fa9f2e";
 			};
 			name = Release;
 		};
