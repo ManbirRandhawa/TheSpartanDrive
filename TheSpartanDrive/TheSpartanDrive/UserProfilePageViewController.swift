@@ -10,13 +10,14 @@ import Foundation
 import UIKit
 import Parse
 
-class UserProfilePageViewController : UIViewController, UITableViewDataSource, UITableViewDelegate{
+class UserProfilePageViewController : UIViewController, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate{
     
     
     @IBOutlet weak var commentBoxText: UITextView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var profilePageUsernameField: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
+    
     
     
     var hostuser = PFUser()
@@ -79,14 +80,21 @@ class UserProfilePageViewController : UIViewController, UITableViewDataSource, U
     
     var commentsArray = [String]()
     
+   
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+    
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
- 
-      
-        
-        
+     commentBoxText.delegate = self
         
     }
     

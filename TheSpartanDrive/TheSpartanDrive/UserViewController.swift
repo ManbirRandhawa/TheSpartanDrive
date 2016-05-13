@@ -10,7 +10,7 @@ import UIKit
 import Parse
 import Foundation
 
-class UserViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDataSource,UITableViewDelegate {
+class UserViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate {
     
     var currentUser = PFUser.currentUser()
     
@@ -56,6 +56,13 @@ class UserViewController: UIViewController,UIImagePickerControllerDelegate, UINa
         
         
     }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+       
+        self.view.endEditing(true)
+        return false
+    }
+    
 
     @IBOutlet weak var profileLabel: UILabel!
     @IBAction func profilePictureUpload(sender: AnyObject) {
@@ -317,6 +324,7 @@ class UserViewController: UIViewController,UIImagePickerControllerDelegate, UINa
         profileImageView.addGestureRecognizer(tapGesture)
      
         profileLabel.text = currentUser?.username
+        self.postText.delegate = self
         
         queryForComments(currentUser!)
         
