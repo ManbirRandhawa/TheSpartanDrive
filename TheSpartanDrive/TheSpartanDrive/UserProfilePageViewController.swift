@@ -23,6 +23,8 @@ class UserProfilePageViewController : UIViewController, UITableViewDataSource, U
     
     var commentss = [PFObject]()
     
+    var deleteCommentAlert : UIAlertController?
+    
     
     @IBAction func postACommentButton(sender: AnyObject) {
         
@@ -38,8 +40,20 @@ class UserProfilePageViewController : UIViewController, UITableViewDataSource, U
             {
                 let successAlert = UIAlertView(title: "Post successful!", message: "Comment successful!", delegate: self, cancelButtonTitle: "OK")
                 successAlert.show()
+                
+                //Code for push notifications
+                let pushQuery = PFInstallation.query()!
+                pushQuery.whereKey("user", equalTo: self.hostuser)
+                let push = PFPush()
+                push.setQuery(pushQuery)
+                push.setMessage("New comment from \(PFUser.currentUser()!.username!)")
+                push.sendPushInBackground()//friend is a PFUser object
+                
+                
+                
                 self.commentBoxText.text = "Post.."
                 self.queryForComments(self.hostuser)
+                self.tableView.reloadData()
                 
             } else {
                 let errorAlert = UIAlertView(title: "Cannot Post Comment", message: "Try again!", delegate: self, cancelButtonTitle: "OK")
@@ -201,6 +215,8 @@ class UserProfilePageViewController : UIViewController, UITableViewDataSource, U
             if (userWhoPosted.objectId == PFUser.currentUser()?.objectId)
             {
                 cell.deleteComment.hidden = false
+            } else {
+                cell.deleteComment.hidden = true
             }
             
             
@@ -215,33 +231,53 @@ class UserProfilePageViewController : UIViewController, UITableViewDataSource, U
         return cell
         
     }
+    
+   
 
 
 @IBAction func deleteCommentAction(sender: UIButton)
 {
+    deleteCommentAlert = UIAlertController(title: "PicS'more", message: "Delete this comment?", preferredStyle: .Alert)
     
     
-    let deleteThisComment = commentss[sender.tag]
-    
-    
-    deleteThisComment.fetchIfNeededInBackgroundWithBlock {
-        (object: PFObject?, error:NSError?) in
+    let yesAction = UIAlertAction(title: "Yes", style: .Default) { (action) in
         
-        deleteThisComment.deleteInBackgroundWithBlock({ (true, error) in
-            if (true)
-            {
-                let successAlert = UIAlertView(title: "PicS'more", message: "Deleted!", delegate: self, cancelButtonTitle: "OK")
-                successAlert.show()
-                self.queryForComments(self.hostuser)
-            }
-            else {
-                let errorAlert = UIAlertView(title: "PicS'more", message: "Error Deleting!", delegate: self, cancelButtonTitle: "OK")
-                errorAlert.show()
-            }
-        })
+        let deleteThisComment = self.commentss[sender.tag]
+        
+        
+        deleteThisComment.fetchIfNeededInBackgroundWithBlock {
+            (object: PFObject?, error:NSError?) in
+            
+            deleteThisComment.deleteInBackgroundWithBlock({ (true, error) in
+                if (true)
+                {
+                    let successAlert = UIAlertView(title: "PicS'more", message: "Deleted!", delegate: self, cancelButtonTitle: "OK")
+                    successAlert.show()
+                    self.queryForComments(self.hostuser)
+                }
+                else {
+                    let errorAlert = UIAlertView(title: "PicS'more", message: "Error Deleting!", delegate: self, cancelButtonTitle: "OK")
+                    errorAlert.show()
+                }
+            })
+            
+            
+        }
+        
+    }
+    
+    let noAction = UIAlertAction(title: "No", style: .Default) { (action) in
         
         
     }
+    
+    deleteCommentAlert?.addAction(yesAction)
+    deleteCommentAlert?.addAction(noAction)
+    
+    presentViewController(deleteCommentAlert!, animated: true) { 
+        
+    }
+
     
     
     

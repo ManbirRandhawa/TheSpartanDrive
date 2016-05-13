@@ -8,5 +8,12 @@ target 'TheSpartanDrive' do
 source 'https://github.com/CocoaPods/Specs.git'
 pod 'FileBrowser', '~> 0.1'
 
+pod 'Parse'
+pod 'ParseUI'
+pod 'ParseFacebookUtilsV4'
+pod 'ParseTwitterUtils'
+pod 'FBSDKCoreKit'
+pod 'FBSDKLoginKit'
+
 end
 

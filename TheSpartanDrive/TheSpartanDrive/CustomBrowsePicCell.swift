@@ -14,6 +14,14 @@ class CustomBrowsePicCell: UITableViewCell {
     @IBOutlet weak var privacySettingLabel: UILabel!
     
     
+    @IBOutlet weak var usernameButtonProfilePage: UIButton!
+    
+    @IBOutlet weak var commentLabelBoxProfilePage: MKLabel!
+    
+    @IBOutlet weak var deleteCommentProfilePage: UIButton!
+    
+    
+    
     @IBOutlet weak var deleteComment: UIButton!
     @IBOutlet weak var usernameButton: UIButton!
     

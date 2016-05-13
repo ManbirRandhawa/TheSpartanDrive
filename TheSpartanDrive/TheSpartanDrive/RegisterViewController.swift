@@ -18,12 +18,14 @@ class RegisterViewController: UIViewController,UITextFieldDelegate {
     
     var passwordsNotSameAlertController: UIAlertController?
    
+    @IBOutlet weak var emailLabel: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.nameLabel.delegate = self
         self.usernameLabel.delegate=self
+        self.emailLabel.delegate = self
         self.passwordLabel.delegate=self
         self.passwordAgainLabel.delegate=self
         setUpPasswordAlert()
@@ -48,8 +50,9 @@ class RegisterViewController: UIViewController,UITextFieldDelegate {
         var pass1 = passwordLabel.text
         var name = nameLabel.text
         var pass2 = passwordAgainLabel.text
+        var email = emailLabel.text
         
-        if username != "" && pass1 != "" &&  name != "" && pass2 != ""
+        if username != "" && pass1 != "" &&  name != "" && pass2 != "" && email != ""
         {
              //no blank fields, proceed to sign up
             if (pass1 == pass2)
@@ -77,6 +80,8 @@ class RegisterViewController: UIViewController,UITextFieldDelegate {
             nameLabel.becomeFirstResponder()
         case usernameLabel:
             usernameLabel.becomeFirstResponder()
+        case emailLabel:
+            emailLabel.becomeFirstResponder()
         case passwordLabel:
             passwordLabel.becomeFirstResponder()
         case passwordAgainLabel:
@@ -84,17 +89,21 @@ class RegisterViewController: UIViewController,UITextFieldDelegate {
         default:
             break
         }
+        self.view.endEditing(true)
         return false
     }
     
+   
     func signUp() {
         var username = usernameLabel.text
         var pass1 = passwordLabel.text
         var name = nameLabel.text
         var pass2 = passwordAgainLabel.text
+        var email = emailLabel.text
         
         var newUser = PFUser()
         newUser.username = username
+        newUser.email = email
         newUser.password = pass1
         newUser["Name"] = name
         

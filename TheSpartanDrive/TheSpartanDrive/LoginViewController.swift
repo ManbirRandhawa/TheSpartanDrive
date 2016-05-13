@@ -8,6 +8,8 @@
 
 import UIKit
 import Parse
+import ParseUI
+import ParseFacebookUtilsV4
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
@@ -20,10 +22,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         self.usernameLabel.delegate = self
         self.passwordLabel.delegate=self
+       
         
         }
     
     
+    @IBAction func FBAction(sender: AnyObject) {
+    }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.view.endEditing(true)

@@ -8,17 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		2ECFA8CB53D838FA20089471 /* Pods_TheSpartanDrive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A81355C15A2661677A2BD99B /* Pods_TheSpartanDrive.framework */; };
-		4E3E7AC71CE2D41A00BF041E /* AkiraTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E7ABC1CE2D41A00BF041E /* AkiraTextField.swift */; };
-		4E3E7AC81CE2D41A00BF041E /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E7ABD1CE2D41A00BF041E /* HoshiTextField.swift */; };
-		4E3E7AC91CE2D41A00BF041E /* IsaoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E7ABE1CE2D41A00BF041E /* IsaoTextField.swift */; };
 		4E3E7ACA1CE2D41A00BF041E /* JiroTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E7ABF1CE2D41A00BF041E /* JiroTextField.swift */; };
 		4E3E7ACB1CE2D41A00BF041E /* KaedeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E7AC01CE2D41A00BF041E /* KaedeTextField.swift */; };
 		4E3E7ACC1CE2D41A00BF041E /* MadokaTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E7AC11CE2D41A00BF041E /* MadokaTextField.swift */; };
-		4E3E7ACD1CE2D41A00BF041E /* MinoruTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E7AC21CE2D41A00BF041E /* MinoruTextField.swift */; };
 		4E3E7ACE1CE2D41A00BF041E /* TextFieldsEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E7AC41CE2D41A00BF041E /* TextFieldsEffects.swift */; };
-		4E3E7ACF1CE2D41A00BF041E /* YokoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E7AC51CE2D41A00BF041E /* YokoTextField.swift */; };
-		4E3E7AD01CE2D41A00BF041E /* YoshikoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E7AC61CE2D41A00BF041E /* YoshikoTextField.swift */; };
 		4E83E91F1CDB246800995812 /* UserUploadHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E83E91E1CDB246800995812 /* UserUploadHistoryViewController.swift */; };
+		4E88C4BE1CE570A600DF7BBD /* MKActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88C4AD1CE570A600DF7BBD /* MKActivityIndicator.swift */; };
+		4E88C4BF1CE570A600DF7BBD /* MKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88C4AE1CE570A600DF7BBD /* MKButton.swift */; };
+		4E88C4C01CE570A600DF7BBD /* MKCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88C4AF1CE570A600DF7BBD /* MKCardView.swift */; };
+		4E88C4C11CE570A600DF7BBD /* MKCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88C4B01CE570A600DF7BBD /* MKCollectionViewCell.swift */; };
+		4E88C4C21CE570A600DF7BBD /* MKColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88C4B11CE570A600DF7BBD /* MKColor.swift */; };
+		4E88C4C31CE570A600DF7BBD /* MKEmbedDrawerControllerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88C4B21CE570A600DF7BBD /* MKEmbedDrawerControllerSegue.swift */; };
+		4E88C4C41CE570A600DF7BBD /* MKEmbedMainControllerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88C4B31CE570A600DF7BBD /* MKEmbedMainControllerSegue.swift */; };
+		4E88C4C51CE570A600DF7BBD /* MKImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88C4B41CE570A600DF7BBD /* MKImageView.swift */; };
+		4E88C4C61CE570A600DF7BBD /* MKLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88C4B51CE570A600DF7BBD /* MKLabel.swift */; };
+		4E88C4C71CE570A600DF7BBD /* MKLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88C4B61CE570A600DF7BBD /* MKLayer.swift */; };
+		4E88C4C81CE570A600DF7BBD /* MKNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88C4B71CE570A600DF7BBD /* MKNavigationBar.swift */; };
+		4E88C4C91CE570A600DF7BBD /* MKRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88C4B81CE570A600DF7BBD /* MKRefreshControl.swift */; };
+		4E88C4CA1CE570A600DF7BBD /* MKSideDrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88C4B91CE570A600DF7BBD /* MKSideDrawerViewController.swift */; };
+		4E88C4CB1CE570A600DF7BBD /* MKSnackbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88C4BA1CE570A600DF7BBD /* MKSnackbar.swift */; };
+		4E88C4CC1CE570A600DF7BBD /* MKSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88C4BB1CE570A600DF7BBD /* MKSwitch.swift */; };
+		4E88C4CD1CE570A600DF7BBD /* MKTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88C4BC1CE570A600DF7BBD /* MKTableViewCell.swift */; };
+		4E88C4CE1CE570A600DF7BBD /* MKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88C4BD1CE570A600DF7BBD /* MKTextField.swift */; };
+		4E88C4DB1CE599C500DF7BBD /* ForgotPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88C4DA1CE599C500DF7BBD /* ForgotPassViewController.swift */; };
 		4EB12FCC1CD86CD500F25D9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB12FCB1CD86CD500F25D9D /* AppDelegate.swift */; };
 		4EB12FCE1CD86CD500F25D9D /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB12FCD1CD86CD500F25D9D /* UserViewController.swift */; };
 		4EB12FD01CD86CD500F25D9D /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB12FCF1CD86CD500F25D9D /* BrowseViewController.swift */; };
@@ -47,18 +59,30 @@
 
 /* Begin PBXFileReference section */
 		4030A63CEE7039A61286CECB /* Pods-TheSpartanDrive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheSpartanDrive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TheSpartanDrive/Pods-TheSpartanDrive.debug.xcconfig"; sourceTree = "<group>"; };
-		4E3E7ABC1CE2D41A00BF041E /* AkiraTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AkiraTextField.swift; sourceTree = "<group>"; };
-		4E3E7ABD1CE2D41A00BF041E /* HoshiTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoshiTextField.swift; sourceTree = "<group>"; };
-		4E3E7ABE1CE2D41A00BF041E /* IsaoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsaoTextField.swift; sourceTree = "<group>"; };
 		4E3E7ABF1CE2D41A00BF041E /* JiroTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JiroTextField.swift; sourceTree = "<group>"; };
 		4E3E7AC01CE2D41A00BF041E /* KaedeTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KaedeTextField.swift; sourceTree = "<group>"; };
 		4E3E7AC11CE2D41A00BF041E /* MadokaTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MadokaTextField.swift; sourceTree = "<group>"; };
-		4E3E7AC21CE2D41A00BF041E /* MinoruTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinoruTextField.swift; sourceTree = "<group>"; };
 		4E3E7AC31CE2D41A00BF041E /* TextFieldEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldEffects.h; sourceTree = "<group>"; };
 		4E3E7AC41CE2D41A00BF041E /* TextFieldsEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldsEffects.swift; sourceTree = "<group>"; };
-		4E3E7AC51CE2D41A00BF041E /* YokoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YokoTextField.swift; sourceTree = "<group>"; };
-		4E3E7AC61CE2D41A00BF041E /* YoshikoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoshikoTextField.swift; sourceTree = "<group>"; };
 		4E83E91E1CDB246800995812 /* UserUploadHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserUploadHistoryViewController.swift; sourceTree = "<group>"; };
+		4E88C4AD1CE570A600DF7BBD /* MKActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKActivityIndicator.swift; sourceTree = "<group>"; };
+		4E88C4AE1CE570A600DF7BBD /* MKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKButton.swift; sourceTree = "<group>"; };
+		4E88C4AF1CE570A600DF7BBD /* MKCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKCardView.swift; sourceTree = "<group>"; };
+		4E88C4B01CE570A600DF7BBD /* MKCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKCollectionViewCell.swift; sourceTree = "<group>"; };
+		4E88C4B11CE570A600DF7BBD /* MKColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKColor.swift; sourceTree = "<group>"; };
+		4E88C4B21CE570A600DF7BBD /* MKEmbedDrawerControllerSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKEmbedDrawerControllerSegue.swift; sourceTree = "<group>"; };
+		4E88C4B31CE570A600DF7BBD /* MKEmbedMainControllerSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKEmbedMainControllerSegue.swift; sourceTree = "<group>"; };
+		4E88C4B41CE570A600DF7BBD /* MKImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKImageView.swift; sourceTree = "<group>"; };
+		4E88C4B51CE570A600DF7BBD /* MKLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKLabel.swift; sourceTree = "<group>"; };
+		4E88C4B61CE570A600DF7BBD /* MKLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKLayer.swift; sourceTree = "<group>"; };
+		4E88C4B71CE570A600DF7BBD /* MKNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKNavigationBar.swift; sourceTree = "<group>"; };
+		4E88C4B81CE570A600DF7BBD /* MKRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKRefreshControl.swift; sourceTree = "<group>"; };
+		4E88C4B91CE570A600DF7BBD /* MKSideDrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKSideDrawerViewController.swift; sourceTree = "<group>"; };
+		4E88C4BA1CE570A600DF7BBD /* MKSnackbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKSnackbar.swift; sourceTree = "<group>"; };
+		4E88C4BB1CE570A600DF7BBD /* MKSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKSwitch.swift; sourceTree = "<group>"; };
+		4E88C4BC1CE570A600DF7BBD /* MKTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKTableViewCell.swift; sourceTree = "<group>"; };
+		4E88C4BD1CE570A600DF7BBD /* MKTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKTextField.swift; sourceTree = "<group>"; };
+		4E88C4DA1CE599C500DF7BBD /* ForgotPassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPassViewController.swift; sourceTree = "<group>"; };
 		4EB12FC81CD86CD500F25D9D /* TheSpartanDrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheSpartanDrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EB12FCB1CD86CD500F25D9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EB12FCD1CD86CD500F25D9D /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
@@ -116,24 +140,43 @@
 		4E3E7AD11CE2D42700BF041E /* textFields */ = {
 			isa = PBXGroup;
 			children = (
-				4E3E7ABC1CE2D41A00BF041E /* AkiraTextField.swift */,
-				4E3E7ABD1CE2D41A00BF041E /* HoshiTextField.swift */,
-				4E3E7ABE1CE2D41A00BF041E /* IsaoTextField.swift */,
 				4E3E7ABF1CE2D41A00BF041E /* JiroTextField.swift */,
 				4E3E7AC01CE2D41A00BF041E /* KaedeTextField.swift */,
 				4E3E7AC11CE2D41A00BF041E /* MadokaTextField.swift */,
-				4E3E7AC21CE2D41A00BF041E /* MinoruTextField.swift */,
 				4E3E7AC31CE2D41A00BF041E /* TextFieldEffects.h */,
 				4E3E7AC41CE2D41A00BF041E /* TextFieldsEffects.swift */,
-				4E3E7AC51CE2D41A00BF041E /* YokoTextField.swift */,
-				4E3E7AC61CE2D41A00BF041E /* YoshikoTextField.swift */,
 			);
 			name = textFields;
+			sourceTree = "<group>";
+		};
+		4E88C4AC1CE5707400DF7BBD /* MaterialDesign-@NGHIALV */ = {
+			isa = PBXGroup;
+			children = (
+				4E88C4AD1CE570A600DF7BBD /* MKActivityIndicator.swift */,
+				4E88C4AE1CE570A600DF7BBD /* MKButton.swift */,
+				4E88C4AF1CE570A600DF7BBD /* MKCardView.swift */,
+				4E88C4B01CE570A600DF7BBD /* MKCollectionViewCell.swift */,
+				4E88C4B11CE570A600DF7BBD /* MKColor.swift */,
+				4E88C4B21CE570A600DF7BBD /* MKEmbedDrawerControllerSegue.swift */,
+				4E88C4B31CE570A600DF7BBD /* MKEmbedMainControllerSegue.swift */,
+				4E88C4B41CE570A600DF7BBD /* MKImageView.swift */,
+				4E88C4B51CE570A600DF7BBD /* MKLabel.swift */,
+				4E88C4B61CE570A600DF7BBD /* MKLayer.swift */,
+				4E88C4B71CE570A600DF7BBD /* MKNavigationBar.swift */,
+				4E88C4B81CE570A600DF7BBD /* MKRefreshControl.swift */,
+				4E88C4B91CE570A600DF7BBD /* MKSideDrawerViewController.swift */,
+				4E88C4BA1CE570A600DF7BBD /* MKSnackbar.swift */,
+				4E88C4BB1CE570A600DF7BBD /* MKSwitch.swift */,
+				4E88C4BC1CE570A600DF7BBD /* MKTableViewCell.swift */,
+				4E88C4BD1CE570A600DF7BBD /* MKTextField.swift */,
+			);
+			name = "MaterialDesign-@NGHIALV";
 			sourceTree = "<group>";
 		};
 		4EB12FBF1CD86CD500F25D9D = {
 			isa = PBXGroup;
 			children = (
+				4E88C4AC1CE5707400DF7BBD /* MaterialDesign-@NGHIALV */,
 				4E3E7AD11CE2D42700BF041E /* textFields */,
 				4EB12FF61CD86EC500F25D9D /* libsqlite3.tbd */,
 				4EB12FF41CD86EBD00F25D9D /* libz.tbd */,
@@ -168,6 +211,7 @@
 				4EB12FCD1CD86CD500F25D9D /* UserViewController.swift */,
 				4EB12FCF1CD86CD500F25D9D /* BrowseViewController.swift */,
 				4EB12FD11CD86CD500F25D9D /* Main.storyboard */,
+				4E88C4DA1CE599C500DF7BBD /* ForgotPassViewController.swift */,
 				4EB605B01CDC18F900CADD25 /* UserProfilePageViewController.swift */,
 				4E83E91E1CDB246800995812 /* UserUploadHistoryViewController.swift */,
 				4EEB6B341CDAEBAE0052A70B /* CustomBrowsePicCell.swift */,
@@ -331,24 +375,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E88C4CB1CE570A600DF7BBD /* MKSnackbar.swift in Sources */,
 				4EB12FD01CD86CD500F25D9D /* BrowseViewController.swift in Sources */,
+				4E88C4C71CE570A600DF7BBD /* MKLayer.swift in Sources */,
+				4E88C4BF1CE570A600DF7BBD /* MKButton.swift in Sources */,
+				4E88C4C51CE570A600DF7BBD /* MKImageView.swift in Sources */,
+				4E88C4C41CE570A600DF7BBD /* MKEmbedMainControllerSegue.swift in Sources */,
+				4E88C4DB1CE599C500DF7BBD /* ForgotPassViewController.swift in Sources */,
 				4EB12FFF1CD87BC300F25D9D /* UploadViewController.swift in Sources */,
-				4E3E7ACD1CE2D41A00BF041E /* MinoruTextField.swift in Sources */,
+				4E88C4C11CE570A600DF7BBD /* MKCollectionViewCell.swift in Sources */,
 				4EB12FCC1CD86CD500F25D9D /* AppDelegate.swift in Sources */,
-				4E3E7AC81CE2D41A00BF041E /* HoshiTextField.swift in Sources */,
+				4E88C4CE1CE570A600DF7BBD /* MKTextField.swift in Sources */,
 				4EB12FF91CD8719B00F25D9D /* SplashScreenViewController.swift in Sources */,
 				4EB605B11CDC18F900CADD25 /* UserProfilePageViewController.swift in Sources */,
 				4E3E7ACC1CE2D41A00BF041E /* MadokaTextField.swift in Sources */,
-				4E3E7ACF1CE2D41A00BF041E /* YokoTextField.swift in Sources */,
+				4E88C4CA1CE570A600DF7BBD /* MKSideDrawerViewController.swift in Sources */,
 				4E3E7ACB1CE2D41A00BF041E /* KaedeTextField.swift in Sources */,
 				4EB12FFD1CD8723E00F25D9D /* RegisterViewController.swift in Sources */,
+				4E88C4C81CE570A600DF7BBD /* MKNavigationBar.swift in Sources */,
 				4E83E91F1CDB246800995812 /* UserUploadHistoryViewController.swift in Sources */,
-				4E3E7AC91CE2D41A00BF041E /* IsaoTextField.swift in Sources */,
+				4E88C4C01CE570A600DF7BBD /* MKCardView.swift in Sources */,
 				4EEB6B351CDAEBAE0052A70B /* CustomBrowsePicCell.swift in Sources */,
+				4E88C4CD1CE570A600DF7BBD /* MKTableViewCell.swift in Sources */,
 				4EB12FFB1CD8721600F25D9D /* LoginViewController.swift in Sources */,
+				4E88C4C61CE570A600DF7BBD /* MKLabel.swift in Sources */,
+				4E88C4C21CE570A600DF7BBD /* MKColor.swift in Sources */,
 				4EB12FCE1CD86CD500F25D9D /* UserViewController.swift in Sources */,
-				4E3E7AD01CE2D41A00BF041E /* YoshikoTextField.swift in Sources */,
-				4E3E7AC71CE2D41A00BF041E /* AkiraTextField.swift in Sources */,
+				4E88C4C91CE570A600DF7BBD /* MKRefreshControl.swift in Sources */,
+				4E88C4CC1CE570A600DF7BBD /* MKSwitch.swift in Sources */,
+				4E88C4C31CE570A600DF7BBD /* MKEmbedDrawerControllerSegue.swift in Sources */,
+				4E88C4BE1CE570A600DF7BBD /* MKActivityIndicator.swift in Sources */,
 				4E3E7ACE1CE2D41A00BF041E /* TextFieldsEffects.swift in Sources */,
 				4E3E7ACA1CE2D41A00BF041E /* JiroTextField.swift in Sources */,
 			);
@@ -466,7 +522,8 @@
 			baseConfigurationReference = 4030A63CEE7039A61286CECB /* Pods-TheSpartanDrive.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: manchintz@hotmail.com (MJHUYH4KGR)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -475,9 +532,11 @@
 				);
 				INFOPLIST_FILE = TheSpartanDrive/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ttpm.TheSpartanDrive;
+				PRODUCT_BUNDLE_IDENTIFIER = TheSpartanDrive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "747fc644-35e2-44fa-8a49-131262fa9f2e";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "TheSpartanDrive/TheSpartanDrive-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -486,7 +545,8 @@
 			baseConfigurationReference = A7598432D6FBA49EB6FD8843 /* Pods-TheSpartanDrive.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: manchintz@hotmail.com (MJHUYH4KGR)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -495,9 +555,11 @@
 				);
 				INFOPLIST_FILE = TheSpartanDrive/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ttpm.TheSpartanDrive;
+				PRODUCT_BUNDLE_IDENTIFIER = TheSpartanDrive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "747fc644-35e2-44fa-8a49-131262fa9f2e";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "TheSpartanDrive/TheSpartanDrive-Bridging-Header.h";
+				VALIDATE_PRODUCT = NO;
 			};
 			name = Release;
 		};

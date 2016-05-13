@@ -10,6 +10,7 @@ import UIKit
 import Parse
 import Bolts
 import FileBrowser
+import ParseFacebookUtilsV4
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,8 +28,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.initializeWithConfiguration(configuration)
         
         
+        Parse.setApplicationId("6rd8LKFSsIrqKgdznq6NzMM7z0FOnl8tqZtajb02", clientKey:"RSIJUc4b4kQ7DOw7uHhlqCOSMAzKZ4IKqGEk6I9f")
+        PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
+        
+        
+      
         // Override point for customization after application launch.
         return true
+    }
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        let installation = PFInstallation.currentInstallation()
+        installation.setDeviceTokenFromData(deviceToken)
+        installation.saveInBackground()
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        if error.code == 3010 {
+            print("Push notifications are not supported in the iOS Simulator.")
+        } else {
+            print("application:didFailToRegisterForRemoteNotificationsWithError: %@", error)
+        }
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        PFPush.handlePush(userInfo)
+    }
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+        return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -46,7 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        FBSDKAppEvents.activateApp()
     }
 
     func applicationWillTerminate(application: UIApplication) {

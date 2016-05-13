@@ -1,4 +1,4 @@
-# TheSpartanDrive
+# "TheSpartanDrive" now known as PicS'more
 CMPE 137 iOS Project
 
 #TO INSTALL FILEBROWSER
@@ -12,3 +12,5 @@ Via terminal go inside the second "TheSpartanDrive" Folder
 and type "pod install"
 
 after install close xCode and open it again, good to go.
+
+#Also must need Parse installed, parse is added to the podfile as well.

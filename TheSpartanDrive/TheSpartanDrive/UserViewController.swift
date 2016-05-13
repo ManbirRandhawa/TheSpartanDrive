@@ -8,16 +8,54 @@
 
 import UIKit
 import Parse
+import Foundation
 
-class UserViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class UserViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDataSource,UITableViewDelegate {
     
     var currentUser = PFUser.currentUser()
+    
+    @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var profileImageView: UIImageView!
     
     let imagePicker = UIImagePickerController()
     
     var profilePicAvailable = Bool()
+    
+      var commentss = [PFObject]()
+    
+      var commentsArray = [String]()
+    
+    @IBOutlet weak var postText: MKTextField!
+    
+    var deleteCommentAlert : UIAlertController?
+   
+    @IBAction func postCommentButton(sender: AnyObject) {
+        
+        //let sharedPref = NSUserDefaults.standardUserDefaults()
+        //let userYouAreVisiting = sharedPref.valueForKey("VisitingUserProfile")
+        
+        var newComment = PFObject(className:"ProfileComments")
+        newComment["UserProfile"] = currentUser
+        newComment["PosterOfUserComment"] = currentUser
+        newComment["Comment"] = postText.text
+        newComment.saveInBackgroundWithBlock { (true:Bool, error:NSError?) in
+            if (true)
+            {
+                let successAlert = UIAlertView(title: "Post successful!", message: "Comment successful!", delegate: self, cancelButtonTitle: "OK")
+                successAlert.show()
+                self.postText.text = ""
+                self.queryForComments(self.currentUser!)
+                self.tableView.reloadData()
+                
+            } else {
+                let errorAlert = UIAlertView(title: "Cannot Post Comment", message: "Try again!", delegate: self, cancelButtonTitle: "OK")
+                errorAlert.show()
+            }
+        }
+        
+        
+    }
 
     @IBOutlet weak var profileLabel: UILabel!
     @IBAction func profilePictureUpload(sender: AnyObject) {
@@ -27,6 +65,168 @@ class UserViewController: UIViewController,UIImagePickerControllerDelegate, UINa
         presentViewController(imagePicker, animated: true, completion: nil)
         
     }
+    
+    func queryForComments(host:PFUser) -> [PFObject]
+    {
+        print(host)
+        print("PRINTED I QUERY FOR COMMENTS")
+        commentss = [PFObject]()
+        
+        var query = PFQuery(className: "ProfileComments")
+        print("Step1")
+        query.whereKey("UserProfile", equalTo: host)
+        print("Step2")
+        query.orderByDescending("createdAt")
+        query.findObjectsInBackgroundWithBlock { (comments:[PFObject]?, error:NSError?) in
+            if (error == nil)
+            {
+                print("SUCEZZZZZ")
+                if let commentsz = comments{
+                    for comment in commentsz {
+                        print("Step3")
+                        self.commentss.append(comment)
+                        
+                    }
+                    self.tableView.reloadData()
+                    
+                }
+                print(self.commentss.count)
+                
+            } else {
+                print("error getting comments")
+            }
+        }
+        
+        
+        return commentss
+        
+    }
+
+    
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return commentss.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("cell2", forIndexPath: indexPath) as! CustomBrowsePicCell
+        
+        cell.commentLabelBoxProfilePage.text = commentss[indexPath.row]["Comment"] as! String
+        
+        var userWhoPosted = commentss[indexPath.row]["PosterOfUserComment"] as! PFUser
+        
+        userWhoPosted.fetchIfNeededInBackgroundWithBlock { (object:PFObject?, error:NSError?) in
+            cell.usernameButtonProfilePage.setTitle(userWhoPosted.username!, forState: UIControlState.Normal)
+            print (userWhoPosted.username)
+            print("now")
+            print(self.currentUser!.username)
+            
+            if (userWhoPosted.username == self.currentUser!.username)
+            {
+                cell.deleteCommentProfilePage.hidden = false
+            } else {
+                cell.deleteCommentProfilePage.hidden = true
+            }
+            
+            
+        }
+        
+        cell.deleteCommentProfilePage.tag = indexPath.row
+        
+        cell.deleteCommentProfilePage.addTarget(self, action: "deleteCommentAction:", forControlEvents: .TouchUpInside)
+        
+        
+        cell.usernameButtonProfilePage.tag = indexPath.row
+        
+        cell.usernameButtonProfilePage.addTarget(self, action: "userProfileAction:", forControlEvents: .TouchUpInside)
+        
+        
+        return cell
+
+        
+    }
+    
+    @IBAction func userProfileAction(sender: UIButton)
+    {
+        
+        let usernamestring = commentss[sender.tag]["PosterOfUserComment"] as! PFUser
+        
+        
+        usernamestring.fetchIfNeededInBackgroundWithBlock {
+            (object: PFObject?, error:NSError?) in
+            
+            let sharedPref = NSUserDefaults.standardUserDefaults()
+            sharedPref.setValue(usernamestring.objectId!, forKey: "VisitingUserProfile")
+            
+            
+        }
+        
+        
+        
+        
+        performSegueWithIdentifier("visitUserProfile1", sender: self)
+        
+    }
+    
+    
+    
+    @IBAction func deleteCommentAction(sender: UIButton)
+    {
+        
+        
+        deleteCommentAlert = UIAlertController(title: "PicS'more", message: "Delete this comment?", preferredStyle: .Alert)
+        
+        
+        let yesAction = UIAlertAction(title: "Yes", style: .Default) { (action) in
+            
+            let deleteThisComment = self.commentss[sender.tag]
+            
+            
+            deleteThisComment.fetchIfNeededInBackgroundWithBlock {
+                (object: PFObject?, error:NSError?) in
+                
+                deleteThisComment.deleteInBackgroundWithBlock({ (true, error) in
+                    if (true)
+                    {
+                        let successAlert = UIAlertView(title: "PicS'more", message: "Deleted!", delegate: self, cancelButtonTitle: "OK")
+                        successAlert.show()
+                        self.queryForComments(self.currentUser!)
+                    }
+                    else {
+                        let errorAlert = UIAlertView(title: "PicS'more", message: "Error Deleting!", delegate: self, cancelButtonTitle: "OK")
+                        errorAlert.show()
+                    }
+                })
+                
+                
+            }
+            
+        }
+        
+        let noAction = UIAlertAction(title: "No", style: .Default) { (action) in
+            
+            
+        }
+        
+        deleteCommentAlert?.addAction(yesAction)
+        deleteCommentAlert?.addAction(noAction)
+        
+        presentViewController(deleteCommentAlert!, animated: true) { 
+            
+        }
+        
+        
+        
+        
+
+        
+        
+        
+        
+        
+    }
+    
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
@@ -118,6 +318,7 @@ class UserViewController: UIViewController,UIImagePickerControllerDelegate, UINa
      
         profileLabel.text = currentUser?.username
         
+        queryForComments(currentUser!)
         
         if currentUser != nil
         {
@@ -142,6 +343,8 @@ class UserViewController: UIViewController,UIImagePickerControllerDelegate, UINa
             
         }
     }
+    
+   
 
     
     
