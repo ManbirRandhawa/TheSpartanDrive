@@ -83,6 +83,7 @@
 		4E88C4BC1CE570A600DF7BBD /* MKTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKTableViewCell.swift; sourceTree = "<group>"; };
 		4E88C4BD1CE570A600DF7BBD /* MKTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKTextField.swift; sourceTree = "<group>"; };
 		4E88C4DA1CE599C500DF7BBD /* ForgotPassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPassViewController.swift; sourceTree = "<group>"; };
+		4E88C4FA1CE5B13700DF7BBD /* TheSpartanDrive-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TheSpartanDrive-Bridging-Header.h"; sourceTree = "<group>"; };
 		4EB12FC81CD86CD500F25D9D /* TheSpartanDrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheSpartanDrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EB12FCB1CD86CD500F25D9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EB12FCD1CD86CD500F25D9D /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
@@ -176,6 +177,7 @@
 		4EB12FBF1CD86CD500F25D9D = {
 			isa = PBXGroup;
 			children = (
+				4E88C4FA1CE5B13700DF7BBD /* TheSpartanDrive-Bridging-Header.h */,
 				4E88C4AC1CE5707400DF7BBD /* MaterialDesign-@NGHIALV */,
 				4E3E7AD11CE2D42700BF041E /* textFields */,
 				4EB12FF61CD86EC500F25D9D /* libsqlite3.tbd */,

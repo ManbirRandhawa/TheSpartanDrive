@@ -85,21 +85,11 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-TheSpartanDrive/Bolts.framework"
-  install_framework "Pods-TheSpartanDrive/FBSDKCoreKit.framework"
-  install_framework "Pods-TheSpartanDrive/FBSDKLoginKit.framework"
   install_framework "Pods-TheSpartanDrive/FileBrowser.framework"
   install_framework "Pods-TheSpartanDrive/Parse.framework"
-  install_framework "Pods-TheSpartanDrive/ParseFacebookUtilsV4.framework"
-  install_framework "Pods-TheSpartanDrive/ParseTwitterUtils.framework"
-  install_framework "Pods-TheSpartanDrive/ParseUI.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-TheSpartanDrive/Bolts.framework"
-  install_framework "Pods-TheSpartanDrive/FBSDKCoreKit.framework"
-  install_framework "Pods-TheSpartanDrive/FBSDKLoginKit.framework"
   install_framework "Pods-TheSpartanDrive/FileBrowser.framework"
   install_framework "Pods-TheSpartanDrive/Parse.framework"
-  install_framework "Pods-TheSpartanDrive/ParseFacebookUtilsV4.framework"
-  install_framework "Pods-TheSpartanDrive/ParseTwitterUtils.framework"
-  install_framework "Pods-TheSpartanDrive/ParseUI.framework"
 fi
